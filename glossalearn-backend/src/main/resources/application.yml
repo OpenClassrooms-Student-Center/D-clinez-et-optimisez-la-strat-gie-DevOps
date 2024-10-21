@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: glossalearn
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+    database: postgresql
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 8
+  cache:
+    type: redis
+    redis:
+      time-to-live: 30
+      cache-null-values: false
+
+---
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+server:
+  port: 8080
+
+---
+clear:
+  all:
+    cache:
+      fixed:
+        rate:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"
+
+  endpoint:
+    shutdown:
+      enabled: true

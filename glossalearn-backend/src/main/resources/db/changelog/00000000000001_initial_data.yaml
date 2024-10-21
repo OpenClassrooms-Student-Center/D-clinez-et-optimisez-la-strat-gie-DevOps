@@ -1,0 +1,169 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-lessons-and-tags
+      author: liquibase
+      changes:
+        # Insert lessons
+        - insert:
+            tableName: lessons
+            columns:
+              - column:
+                  name: id
+                  value: cfe6bba5-3d8b-40f2-bf08-bbc1a7fc8d6e
+              - column:
+                  name: title
+                  value: "Introduction à Glossalearn"
+              - column:
+                  name: content
+                  value: "Bienvenue sur Glossalearn ! Dans cette leçon, vous apprendrez les bases de notre plateforme."
+              - column:
+                  name: description
+                  value: "Une vue d'ensemble de Glossalearn et de ses fonctionnalités clés."
+        - insert:
+            tableName: lessons
+            columns:
+              - column:
+                  name: id
+                  value: 7e5fa8e9-81cc-4e7b-aadf-bd4e4a303a91
+              - column:
+                  name: title
+                  value: "Premiers pas avec les cours"
+              - column:
+                  name: content
+                  value: "Cette leçon vous guidera à travers le processus de sélection et de démarrage de votre premier cours."
+              - column:
+                  name: description
+                  value: "Comment parcourir, sélectionner et commencer un nouveau cours."
+        - insert:
+            tableName: lessons
+            columns:
+              - column:
+                  name: id
+                  value: 75db7cfc-5245-4b1c-8b6f-b2f8dbb2317d
+              - column:
+                  name: title
+                  value: "Comprendre les parcours d'apprentissage"
+              - column:
+                  name: content
+                  value: "Dans cette leçon, nous expliquons comment fonctionnent les parcours d'apprentissage et comment ils peuvent vous aider à organiser vos études."
+              - column:
+                  name: description
+                  value: "Apprenez à utiliser les parcours d'apprentissage pour structurer vos études."
+        - insert:
+            tableName: lessons
+            columns:
+              - column:
+                  name: id
+                  value: d309a04d-2cb4-4e3c-9219-e49e4b550eb5
+              - column:
+                  name: title
+                  value: "Naviguer sur le tableau de bord"
+              - column:
+                  name: content
+                  value: "Apprenez à utiliser le tableau de bord pour suivre votre progression et gérer vos cours."
+              - column:
+                  name: description
+                  value: "Maîtrisez les fonctionnalités du tableau de bord pour une meilleure gestion des cours."
+        - insert:
+            tableName: lessons
+            columns:
+              - column:
+                  name: id
+                  value: 9a47ba16-5f3e-44d1-8f66-7156ef4b521d
+              - column:
+                  name: title
+                  value: "Conseils pour un apprentissage efficace"
+              - column:
+                  name: content
+                  value: "Découvrez des conseils et astuces pour maximiser votre expérience d'apprentissage sur Glossalearn."
+              - column:
+                  name: description
+                  value: "Améliorez votre efficacité d'apprentissage grâce à ces conseils pratiques."
+
+        # Insert tags
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "Introduction"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "Premiers pas"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "Parcours d'apprentissage"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "Tableau de bord"
+        - insert:
+            tableName: tags
+            columns:
+              - column:
+                  name: name
+                  value: "Conseils d'apprentissage"
+
+        # Insert into lessons_tags (Many-to-Many relationship)
+        - insert:
+            tableName: lessons_tags
+            columns:
+              - column:
+                  name: lesson_id
+                  value: cfe6bba5-3d8b-40f2-bf08-bbc1a7fc8d6e
+              - column:
+                  name: tag_name
+                  value: "Introduction"
+        - insert:
+            tableName: lessons_tags
+            columns:
+              - column:
+                  name: lesson_id
+                  value: 7e5fa8e9-81cc-4e7b-aadf-bd4e4a303a91
+              - column:
+                  name: tag_name
+                  value: "Introduction"
+        - insert:
+            tableName: lessons_tags
+            columns:
+              - column:
+                  name: lesson_id
+                  value: 7e5fa8e9-81cc-4e7b-aadf-bd4e4a303a91
+              - column:
+                  name: tag_name
+                  value: "Premiers pas"
+        - insert:
+            tableName: lessons_tags
+            columns:
+              - column:
+                  name: lesson_id
+                  value: 75db7cfc-5245-4b1c-8b6f-b2f8dbb2317d
+              - column:
+                  name: tag_name
+                  value: "Parcours d'apprentissage"
+        - insert:
+            tableName: lessons_tags
+            columns:
+              - column:
+                  name: lesson_id
+                  value: d309a04d-2cb4-4e3c-9219-e49e4b550eb5
+              - column:
+                  name: tag_name
+                  value: "Tableau de bord"
+        - insert:
+            tableName: lessons_tags
+            columns:
+              - column:
+                  name: lesson_id
+                  value: 9a47ba16-5f3e-44d1-8f66-7156ef4b521d
+              - column:
+                  name: tag_name
+                  value: "Conseils d'apprentissage"

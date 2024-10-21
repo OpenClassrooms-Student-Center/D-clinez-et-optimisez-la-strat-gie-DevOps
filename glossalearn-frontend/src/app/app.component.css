@@ -1,0 +1,18 @@
+.header-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+    flex: 1 1 auto;
+    padding-left: 1rem;
+}

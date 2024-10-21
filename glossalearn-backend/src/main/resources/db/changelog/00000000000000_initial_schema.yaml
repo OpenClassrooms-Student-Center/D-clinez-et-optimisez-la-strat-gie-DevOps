@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: init
+      author: liquibase
+      changes:
+        - createTable:
+            tableName: tags
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: name
+                  type: varchar(255)
+        - createTable:
+            tableName: lessons
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: uuid
+              - column:
+                  constraints:
+                    nullable: true
+                  name: title
+                  type: varchar(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: content
+                  type: nvarchar
+              - column:
+                  name: description
+                  type: nvarchar
+        - createTable:
+            tableName: lessons_tags
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_tag_lesson
+                    references: lessons(id)
+                  name: lesson_id
+                  type: uuid
+              - column:
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_lesson_tag
+                    references: tags(name)
+                  name: tag_name
+                  type: varchar(255)

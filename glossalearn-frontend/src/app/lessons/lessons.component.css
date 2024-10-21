@@ -1,0 +1,99 @@
+.container {
+    padding: 2rem 1rem;
+    background-color: #f7f9fc;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3f51b5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .courses-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .course-card {
+    flex: 1 1 auto;
+    width: 30%;
+    min-width: 300px;
+    color: white;
+  }
+  
+  .custom-card {
+    border-radius: 16px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .custom-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+  }
+  
+  .mat-card-header {
+    background-color: #f0f4f8;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 16px 16px 0 0;
+    padding: 1rem;
+  }
+  
+  .mat-card-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #3f51b5;
+  }
+  
+  .mat-card-subtitle {
+    font-size: 1rem;
+    color: #757575;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .mat-chip-tag {
+    background-color: #e0e0e0;
+    color: #424242;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .mat-card-content {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #424242;
+  }
+  
+  .mat-card-actions {
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .mat-card-actions button {
+    margin-right: 0.5rem;
+  }
+  
+  .mat-raised-button {
+    text-transform: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .mat-flat-button {
+    text-transform: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .mat-raised-button:hover, .mat-flat-button:hover {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
